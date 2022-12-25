@@ -1,26 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewporl-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="javascript/script.js" defer></script>
 </head>
+
 <body>
     <div class="main-framework">
-        <div class="results"></div>
+        <div class="results">
+            <p id="result_text">9</p>
+        </div>
         <div class="clear-buttons">
-             <div class="clear">clear</div>
-              <div class="delete">delete</div>
+            <div class="clear">clear</div>
+            <div class="delete">delete</div>
         </div>
         <div class="numbers-operators">
-        <div class="operators"><div class="add operator_btn">+</div>
-    <div class="sub operator_btn">-</div>
-<div class="multiply operator_btn">*</div>
-<div class="divide operator_btn">/</div>
-<div class="equals operator_btn">=</div></div>
-    </div>
+            <div class="operators">
+                <div class="add operator_btn">+</div>
+                <div class="sub operator_btn">-</div>
+                <div class="multiply operator_btn">*</div>
+                <div class="divide operator_btn">/</div>
+                <div class="equals operator_btn">=</div>
+            </div>
+            <div class="numbers">
+                <div class="row row1">
+                    <div class="number_btn" id="number_seven">7</div>
+                    <div class="number_btn" id="number_eight">8</div>
+                    <div class="number_btn" id="number_nine">9</div>
+                </div>
+                <div class="row row2">
+                    <div value="4" class="number_btn" id="number_four">4</div>
+                    <div class="number_btn number_five">5</div>
+                    <div class="number_btn number_six">6</div>
+                </div>
+                <div class="row row3">
+                    <div class="number_btn" id="number_one">1</div>
+                    <div class="number_btn number_two">2</div>
+                    <div class="number_btn number_three">3</div>
+                </div>
+                <div class="row row4">
+                    <div class="number_btn decimal_btn">.</div>
+                    <div class="number_btn number_zero">0</div>
+                    <div class="number_btn number_equals">=</div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
+
 </html>
