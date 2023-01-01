@@ -1,55 +1,49 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewporl-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <script src="javascript/script.js" defer></script>
+    <script src="javascript/script.js"></script>
+    <title>Calculator</title>
 </head>
 
 <body>
-    <div class="main-framework">
-        <div class="results">
-            <p id="result_text">0</p>
+    <main>
+        <div class="display">
+            <div class="number1"> <p id="number1TXT"> 1000 </p></div>
+            <div class="operation">+</div>
+            <div class="number2">500</div>
         </div>
-        <div class="clear-buttons">
-            <div class="clear">clear</div>
-            <div class="delete">delete</div>
-        </div>
-        <div class="numbers-operators">
-            <div class="operators">
-                <div class="operator_btn" id="add">+</div>
-                <div class="operator_btn" id="sub">-</div>
-                <div class="operator_btn" id="multiply">*</div>
-                <div class="operator_btn" id="divide">/</div>
-            </div>
+        <div class="numbersNdOperators">
             <div class="numbers">
-                <div class="row row1">
-                    <div class="number_btn" id="number_seven">7</div>
-                    <div class="number_btn" id="number_eight">8</div>
-                    <div class="number_btn" id="number_nine">9</div>
-                </div>
-                <div class="row row2">
-                    <div value="4" class="number_btn" id="number_four">4</div>
-                    <div class="number_btn number_five">5</div>
-                    <div class="number_btn number_six">6</div>
-                </div>
-                <div class="row row3">
-                    <div class="number_btn" id="number_one">1</div>
-                    <div class="number_btn number_two">2</div>
-                    <div class="number_btn number_three">3</div>
-                </div>
-                <div class="row row4">
-                    <div class="number_btn decimal_btn">.</div>
-                    <div class="number_btn number_zero">0</div>
-                    <div class="number_btn number_equals">=</div>
-                </div>
+                <button type="submit" class="numberBTN">1</button>
+                <button type="submit" class="numberBTN">2</button>
+                <button type="submit" class="numberBTN">3</button>
+                <button type="submit" class="numberBTN">4</button>
+                <button type="submit" class="numberBTN">5</button>
+                <button type="submit" class="numberBTN">6</button>
+                <button type="submit" class="numberBTN">7</button>
+                <button type="submit" class="numberBTN">8</button>
+                <button type="submit" class="numberBTN">9</button>
+                <button type="submit" class="numberBTN" id="zero">0</button>
+            </div>
+            <div class="operators">
+                <button type="submit" class="operatorStyle opertorBTN">C</button>
+                <button type="submit" class="operatorStyle opertorBTN">AC</button>
+                <button type="submit" class="operatorStyle opertorBTN">+</button>
+                <button type="submit" class="operatorStyle opertorBTN">-</button>
+                <button type="submit" class="operatorStyle opertorBTN">*</button>
+                <button type="submit" class="operatorStyle opertorBTN">/</button>
+                <button type="submit" class="operatorStyle opertorBTN">=</button>
             </div>
         </div>
-    </div>
+    </main>
+    <footer>
+        <p>&copy;Harish</p>
+    </footer>
 </body>
 
-</html> 
+</html>
