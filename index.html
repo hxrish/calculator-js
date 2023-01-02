@@ -6,38 +6,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <script src="javascript/script.js"></script>
+    <script src="javascript/script.js" defer></script>
     <title>Calculator</title>
 </head>
 
 <body>
     <main>
         <div class="display">
-            <div class="number1"> <p id="number1TXT"> 1000 </p></div>
-            <div class="operation">+</div>
-            <div class="number2">500</div>
+            <div id="number1"> <p id="number1TXT">  </p></div> <!--Here I am using ID on paragraphs inside the div to help myself target them better in the CSS file-->
+            <div id="operation"><p id="operationNow">+</p></div>
+            <div id="number2"><p id="number2TXT">500</p></div>
         </div>
         <div class="numbersNdOperators">
             <div class="numbers">
-                <button type="submit" class="numberBTN">1</button>
-                <button type="submit" class="numberBTN">2</button>
-                <button type="submit" class="numberBTN">3</button>
-                <button type="submit" class="numberBTN">4</button>
-                <button type="submit" class="numberBTN">5</button>
-                <button type="submit" class="numberBTN">6</button>
-                <button type="submit" class="numberBTN">7</button>
-                <button type="submit" class="numberBTN">8</button>
-                <button type="submit" class="numberBTN">9</button>
-                <button type="submit" class="numberBTN" id="zero">0</button>
+                <!--I have used two clases on each element. One is used to style the element
+                and another one is used to locate the element using DOM methods-->
+                <button type="submit" class="numberBTN numbersDivStyle">1</button>
+                <button type="submit" class="numberBTN numbersDivStyle">2</button>
+                <button type="submit" class="numberBTN numbersDivStyle">3</button>
+                <button type="submit" class="numberBTN numbersDivStyle">4</button>
+                <button type="submit" class="numberBTN numbersDivStyle">5</button>
+                <button type="submit" class="numberBTN numbersDivStyle">6</button>
+                <button type="submit" class="numberBTN numbersDivStyle">7</button>
+                <button type="submit" class="numberBTN numbersDivStyle">8</button>
+                <button type="submit" class="numberBTN numbersDivStyle">9</button>
+                <button type="submit" class="numberBTN numbersDivStyle">.</button>
+                <button type="submit" class="numberBTN numbersDivStyle" id="zero">0</button>
+                <button type="submit" class="operatorBTN numbersDivStyle">=</button>
             </div>
             <div class="operators">
-                <button type="submit" class="operatorStyle opertorBTN">C</button>
-                <button type="submit" class="operatorStyle opertorBTN">AC</button>
-                <button type="submit" class="operatorStyle opertorBTN">+</button>
-                <button type="submit" class="operatorStyle opertorBTN">-</button>
-                <button type="submit" class="operatorStyle opertorBTN">*</button>
-                <button type="submit" class="operatorStyle opertorBTN">/</button>
-                <button type="submit" class="operatorStyle opertorBTN">=</button>
+                <button type="submit" class="operatorStyle operatorBTN">C</button>
+                <button type="submit" class="operatorStyle operatorBTN">AC</button>
+                <button type="submit" class="operatorStyle operatorBTN">+</button>
+                <button type="submit" class="operatorStyle operatorBTN">-</button>
+                <button type="submit" class="operatorStyle operatorBTN">*</button>
+                <button type="submit" class="operatorStyle operatorBTN">/</button>
             </div>
         </div>
     </main>
