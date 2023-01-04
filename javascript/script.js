@@ -9,13 +9,17 @@ let specialBTN = Array.from(document.getElementsByClassName('specialBTN'));
 function clear(){
     number1.innerText = '';
     number2.innerText = '';
+    operationDisplay.innerText = '';
 }
 
-numbers.forEach(Element => {
-    Element.addEventListener('click', elementsClicked => {
-        number1.innerText += Element.innerText;
-    })
-})
+
+function getInput(){
+        numbers.forEach(Element => {
+            Element.addEventListener('click', elementsClicked => {
+                number1.innerText += Element.innerText;
+            })
+        })
+}
 
 operators.forEach(Element => {
     Element.addEventListener('click', () => {
