@@ -30,14 +30,14 @@ decimal.addEventListener('click', () => {
 
 
 operators.forEach((Element) => {
-  if(number1 != ''){
   Element.addEventListener("click", () => {
-
+    if(operationDisplay.innerText == ''){
     operationDisplay.innerHTML = `<p id="operationNow">${Element.innerText}</p>`;
 
     operation(operationDisplay.innerText)
+  }
   });
-}
+
 });
 
 
