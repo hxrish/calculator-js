@@ -1,39 +1,119 @@
-let numbers = Array.from(document.getElementsByClassName('numberBTN'));
-let operators = Array.from(document.getElementsByClassName('operatorBTN'));
-let number1 = document.getElementById('number1');
-let operationDisplay = document.getElementById('operation');
-let number2 = document.getElementById('number2');
-let specialBTN = Array.from(document.getElementsByClassName('specialBTN'));
+let numbers = Array.from(document.getElementsByClassName("numberBTN"));
+let operators = Array.from(document.getElementsByClassName("operatorBTN"));
+let number1 = document.getElementById("number1");
+let operationDisplay = document.getElementById("operation");
+let number2 = document.getElementById("number2");
+let specialBTN = Array.from(document.getElementsByClassName("specialBTN"));
+let equal = document.getElementById("equalsBTN");
+let decimal = document.getElementById("decimal");
 
-
-function clear(){
-    number1.innerText = '';
-    number2.innerText = '';
-    operationDisplay.innerText = '';
+function clear() {
+  number1.innerText = "";
+  number2.innerText = "";
+  operationDisplay.innerText = "";
 }
 
 
-function getInput(){
-        numbers.forEach(Element => {
-            Element.addEventListener('click', elementsClicked => {
-                number1.innerText += Element.innerText;
-            })
-        })
-}
+numbers.forEach((Element) => {
+  Element.addEventListener("click", (elementsClicked) => {
+    number1.innerText += Element.innerText;
+  });
+});
 
-operators.forEach(Element => {
-    Element.addEventListener('click', () => {
-        operationDisplay.innerHTML = `<p id="operationNow">${Element.innerText}</p>`;
-    })
+decimal.addEventListener('click', () => {
+  let decimalplace = '.';
+  if(number1.innerText.indexOf(decimalplace) < 0){
+    number1.innerText = `${number1.innerText}.`
+  }
+  
 })
 
-specialBTN.forEach(Element => {
-    Element.addEventListener('click', () => {
-        if (Element.innerText == 'C'){
-            number1.innerText = number1.innerText.slice(0, -1);
+operators.forEach((Element) => {
+  Element.addEventListener("click", () => {
+
+    operationDisplay.innerHTML = `<p id="operationNow">${Element.innerText}</p>`;
+
+    operation(operationDisplay.innerText)
+  });
+});
+
+function operation(operator){
+
+  let number1num = parseFloat(number1.innerText);
+  let number2num = parseFloat(number2.innerText);
+
+  switch (operator) {
+    case '+':
+      if(number2.innerText == ''){
+        number2.innerText = number1.innerText;
+        number1.innerText = ''
+      }
+      else{
+        number1.innerText = number2num + number1num;
+        number2.innerText = '';
+      }
+      break;
+
+      case '-':
+        if(number2.innerText == ''){
+          number2.innerText = number1.innerText;
+          number1.innerText = ''
         }
-        if (Element.innerText == 'AC'){
-            clear()
+        else{
+          number1.innerText = number2num - number1num;
+          number2.innerText = '';
         }
-    })
+        break;
+
+        case '*':
+          if(number2.innerText == ''){
+            number2.innerText = number1.innerText;
+            number1.innerText = ''
+          }
+          else{
+            number1.innerText = number2num * number1num;
+            number2.innerText = '';
+          }
+          break;
+
+          case '/':
+            if(number2.innerText == ''){
+              number2.innerText = number1.innerText;
+              number1.innerText = ''
+            }
+
+            else if(number2.innerText != '' && number1.innerText == 0){
+              number1.innerText  = 'Illegal!';
+              number2.innerText = '';
+            }
+
+            else{
+              number1.innerText = number2num / number1num;
+              number2.innerText = '';
+            }
+            break;
+    default:
+      break;
+  }
+}
+
+specialBTN.forEach((Element) => {
+  Element.addEventListener("click", () => {
+    if (Element.innerText == "C") {
+      number1.innerText = number1.innerText.slice(0, -1);
+    }
+    if (Element.innerText == "AC") {
+      clear();
+    }
+  });
+});
+
+
+equal.addEventListener('click', () => {
+  if(number2.innerText == ''){
+    return
+  }
+  else{
+    operation(operationDisplay.innerText);
+  }
 })
