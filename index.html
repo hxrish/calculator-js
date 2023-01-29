@@ -14,8 +14,8 @@
     <main>
         <div class="display">
             <div id="number1"> <p id="number1TXT">  </p></div> <!--Here I am using ID on paragraphs inside the div to help myself target them better in the CSS file-->
-            <div id="operation"><p id="operationNow">+</p></div>
-            <div id="number2"><p id="number2TXT">500</p></div>
+            <div id="operation"><p id="operationNow"></p></div>
+            <div id="number2"><p id="number2TXT"></p></div>
         </div>
         <div class="numbersNdOperators">
             <div class="numbers">
@@ -30,9 +30,9 @@
                 <button type="submit" class="numberBTN numbersDivStyle">7</button>
                 <button type="submit" class="numberBTN numbersDivStyle">8</button>
                 <button type="submit" class="numberBTN numbersDivStyle">9</button>
-                <button type="submit" class="specialBTN numbersDivStyle">.</button>
+                <button type="submit" id="decimal" class="numbersDivStyle">.</button>
                 <button type="submit" class="numberBTN numbersDivStyle" id="zero">0</button>
-                <button type="submit" class="operatorBTN numbersDivStyle">=</button>
+                <button type="submit" id="equalsBTN" class="numbersDivStyle">=</button>
             </div>
             <div class="operators">
                 <button type="submit" class="operatorStyle specialBTN">C</button>
