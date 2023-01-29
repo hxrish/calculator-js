@@ -28,14 +28,18 @@ decimal.addEventListener('click', () => {
   
 })
 
+
 operators.forEach((Element) => {
+  if(number1 != ''){
   Element.addEventListener("click", () => {
 
     operationDisplay.innerHTML = `<p id="operationNow">${Element.innerText}</p>`;
 
     operation(operationDisplay.innerText)
   });
+}
 });
+
 
 function operation(operator){
 
@@ -49,8 +53,8 @@ function operation(operator){
         number1.innerText = ''
       }
       else{
-        number1.innerText = number2num + number1num;
-        number2.innerText = '';
+        // number1.innerText = number2num + number1num;
+        // number2.innerText = '';
       }
       break;
 
@@ -60,8 +64,8 @@ function operation(operator){
           number1.innerText = ''
         }
         else{
-          number1.innerText = number2num - number1num;
-          number2.innerText = '';
+          // number1.innerText = number2num - number1num;
+          // number2.innerText = '';
         }
         break;
 
@@ -71,8 +75,8 @@ function operation(operator){
             number1.innerText = ''
           }
           else{
-            number1.innerText = number2num * number1num;
-            number2.innerText = '';
+            // number1.innerText = number2num * number1num;
+            // number2.innerText = '';
           }
           break;
 
@@ -82,16 +86,16 @@ function operation(operator){
               number1.innerText = ''
             }
 
-            else if(number2.innerText != '' && number1.innerText == 0){
-              number1.innerText  = 'Illegal!';
-              number2.innerText = '';
-            }
+            // else if(number2.innerText != '' && number1.innerText == 0){
+            //   number1.innerText  = 'Illegal!';
+            //   number2.innerText = '';
+            // }
 
-            else{
-              number1.innerText = number2num / number1num;
-              number2.innerText = '';
-            }
-            break;
+            // else{
+            //   number1.innerText = number2num / number1num;
+            //   number2.innerText = '';
+            // }
+            // break;
     default:
       break;
   }
@@ -114,6 +118,42 @@ equal.addEventListener('click', () => {
     return
   }
   else{
-    operation(operationDisplay.innerText);
+  let number1num = parseFloat(number1.innerText);
+  let number2num = parseFloat(number2.innerText);
+    switch (operationDisplay.innerText) {
+      case '+':
+        number1.innerText = number2num + number1num;
+        number2.innerText = '';
+        operationDisplay.innerText = '';
+        
+        break;
+
+      case '-':
+        number1.innerText = number2num - number1num;
+        number2.innerText = '';
+        operationDisplay.innerText = '';
+
+        break;
+
+      case '*':
+        number1.innerText = number2num * number1num;
+        number2.innerText = '';
+
+        break;
+
+      case '/':
+        if(number2.innerText != '' && number1.innerText == 0){
+          number1.innerText  = 'Illegal!';
+          number2.innerText = '';
+          operationDisplay.innerText = '';
+        }
+
+        else{
+          number1.innerText = number2num / number1num;
+          number2.innerText = '';
+          operationDisplay.innerText = '';
+        }
+        break;
+        }
   }
 })
